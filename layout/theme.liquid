@@ -1,0 +1,135 @@
+<!doctype html>
+<!--[if IE 9]> <html class="ie9 no-js" lang="{{ shop.locale }}"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js" lang="{{ shop.locale }}"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="{{ settings.color_button }}">
+  <meta name="google-site-verification" content="Bd1u9pvj722sGVEa_JLqKMrjoFStj1_J0egkUheN6oU" />
+  <link rel="canonical" href="{{ canonical_url }}">
+
+  {% if settings.favicon != blank %}
+    <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
+  {% endif %}
+
+  {% capture seo_title %}
+    {{ page_title }}
+    {% if current_tags %}
+      {%- assign meta_tags = current_tags | join: ', ' %} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags -}}
+    {% endif %}
+    {% if current_page != 1 %}
+      &ndash; {{ 'general.meta.page' | t: page: current_page }}
+    {% endif %}
+    {% unless page_title contains shop.name %}
+      &ndash; {{ shop.name }}
+    {% endunless %}
+  {% endcapture %}
+  <title>{{ seo_title }}</title>
+
+  {% if page_description %}
+    <meta name="description" content="{{ page_description | escape }}">
+  {% endif %}
+
+  {% include 'social-meta-tags' %}
+  {% include 'google-fonts' %}
+  
+  <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" /> 
+  {{ 'bootstrap.min.css' | asset_url | stylesheet_tag }}  
+  {{ 'animate.css' | asset_url | stylesheet_tag }}
+  {{ 'magnific-popup.css' | asset_url | stylesheet_tag }}
+  {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
+ 
+  
+  {{ 'jquery.min.js' | asset_url | script_tag }} 
+  {{ 'api.jquery.js' | shopify_asset_url | script_tag }}
+  
+  <script type="text/javascript">
+    var theme = {
+      strings: {
+        addToCart: {{ 'products.product.add_to_cart' | t | json }},
+        soldOut: {{ 'products.product.sold_out' | t | json }},
+        unavailable: {{ 'products.product.unavailable' | t | json }},
+        showMore: {{ 'general.filters.show_more' | t | json }},
+        showLess: {{ 'general.filters.show_less' | t | json }}
+      },
+      moneyFormat: {{ shop.money_format | json }}
+    }
+    document.documentElement.className = document.documentElement.className.replace('no-js', 'js');      
+    
+    theme.ajax_cart = {{settings.ajax_cart }};
+    theme.fixedHeader = {{settings.show_sticky_header }};
+    theme.animation = {{settings.enable_site_animation }};
+    theme.animationMobile = {{settings.site_animation_mobile }};
+      
+  </script>
+
+  <!--[if (lte IE 9) ]>{{ 'match-media.min.js' | asset_url | script_tag }}<![endif]-->
+
+  {% if template contains 'customers' %}
+    <!--[if (gt IE 9)|!(IE)]><!--><script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer="defer"></script><!--<![endif]-->
+    <!--[if lte IE 9]><script src="{{ 'shopify_common.js' | shopify_asset_url }}"></script><![endif]-->
+  {% endif %}
+
+  <!--[if (gt IE 9)|!(IE)]><!--><script src="{{ 'vendor.js' | asset_url }}" defer="defer"></script><!--<![endif]-->
+  <!--[if lte IE 9]><script src="{{ 'vendor.js' | asset_url }}"></script><![endif]-->
+
+  <!--[if (gt IE 9)|!(IE)]><!--><script src="{{ 'theme.js' | asset_url }}" defer="defer"></script><!--<![endif]-->
+  <!--[if lte IE 9]><script src="{{ 'theme.js' | asset_url }}"></script><![endif]--> 
+   
+   
+   {{ 'js.cookie.js' | asset_url | script_tag }}
+   {{ 'bootstrap.min.js' | asset_url | script_tag }} 
+   {{ 'bootstrap-tabcollapse.js' | asset_url | script_tag }} 
+
+   {{ content_for_header }}
+</head>
+
+<body class="template-{{ template | split: '.' | first }}">
+ 
+  <a class="in-page-link visually-hidden skip-link" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
+  
+  {% section 'header' %}
+  {% section 'navigation' %}
+  <div class="page-container" id="PageContainer">
+    <main class="main-content" id="MainContent" role="main">
+      {{ content_for_layout }}
+    </main>
+  </div>
+  {% section 'footer' %}
+ 
+  {% include 'theme-modals' %}
+  
+  {{ 'jquery.magnific-popup.min.js' | asset_url | script_tag }}
+  {{ 'option_selection.js' | shopify_asset_url | script_tag }}
+  {{ 'rivets-cart.min.js' | asset_url | script_tag }}
+  {% if settings.enable_site_animation %}
+    {{ 'wow.min.js' | asset_url | script_tag }}
+  {% endif %}
+
+  <script type="text/javascript">
+    $(function() {
+        CartJS.init({{ cart | json }}, {
+            "moneyFormat": "{{ shop.money_format }}",
+            "moneyWithCurrencyFormat": "{{ shop.money_with_currency_format }}",
+            "requestBodyClass": "loading"
+        });
+    });
+    // Re-render CartJS data- elements when the currency changes.
+    jQuery(document).on('currency.changed', function(e, oldCurrency, newCurrency) {
+      CartJS.render(e, CartJS.cart);
+    });
+    
+    $(document).ready( function(){
+    	if("{{shop.url}}" == "https://famiza-demo.myshopify.com"){ $("body").addClass("famiza");}
+    });
+      
+  </script>
+  
+  {% if settings.scroll_top_arrow %}   	
+	<span id="site-scroll"><i class="fa fa-angle-double-up" aria-hidden="true"></i></span>
+  {% endif %}
+  {% include 'currencies' %}
+  
+</body>
+</html>
