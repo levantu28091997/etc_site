@@ -2,6 +2,7 @@
 <!--[if IE 9]> <html class="ie9 no-js" lang="{{ shop.locale }}"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js" lang="{{ shop.locale }}"> <!--<![endif]-->
 <head>
+ {%- render 'layouthub_header' -%}
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -93,7 +94,7 @@
   {% section 'navigation' %}
   <div class="page-container" id="PageContainer">
     <main class="main-content" id="MainContent" role="main">
-      {{ content_for_layout }}
+      <!--LayoutHub-Workspace-Start-->{{ content_for_layout }}<!--LayoutHub-Workspace-End-->
     </main>
   </div>
   {% section 'footer' %}
@@ -131,5 +132,6 @@
   {% endif %}
   {% include 'currencies' %}
   
-</body>
+{%- render 'layouthub_footer' -%} 
+ </body>
 </html>
