@@ -1,3 +1,303 @@
+/* JS NEW THEME */
+$(document).ready(function(){
+  "use strict";
+
+  //mv_slick
+	$('.mv_slick').slick({
+		autoplay: false,
+		autoplaySpeed: 3000,
+		dots:true,
+		swipe:true,
+		draggable: true,
+		slidesToShow: 1,
+		arrows: true,
+	});
+
+	//card_slick.defo
+	$('.card_slick.defo').slick({
+		autoplay: false,
+		autoplaySpeed: 3000,
+		dots:false,
+		swipe:true,
+		draggable: true,
+		slidesToShow: 5,
+		arrows: true,
+		responsive: [{
+			breakpoint: 767,
+			settings: {
+								centerMode: false,
+								slidesToShow: 2,
+								infinite: false,
+			}
+		}]
+	});
+
+	//card_slick.now_center
+	$('.card_slick.now_center').slick({
+		autoplay: false,
+		autoplaySpeed: 3000,
+		dots:false,
+		swipe:true,
+		draggable: true,
+		slidesToShow: 5,
+		arrows: true,
+		responsive: [{
+			breakpoint: 767,
+			settings: {
+								centerMode: true,
+								slidesToShow: 1,
+								centerPadding: '25%',
+			}
+		}]
+	});
+
+	$('.option_btn').on('click', function () {
+		$(this).parent().toggleClass('active');
+	});
+
+	$(document).on('click',function(e) {
+		if(!$(e.target).closest('.option_btn').length) {
+					$('.option_btn').parent().removeClass('active');
+		} else {
+
+		}
+	});
+
+	$('#join').on('click', function () {
+		$(this).addClass('active');
+		$('#join_box').addClass('active');
+		$('#manage').removeClass('active');
+		$('#manage_box').removeClass('active');
+	});
+
+	$('#manage').on('click', function () {
+			$(this).addClass('active');
+			$('#manage_box').addClass('active');
+			$('#join').removeClass('active');
+			$('#join_box').removeClass('active');
+	});
+
+	// header-drop
+	$('.event_table .box .join span').hover(
+		function() {
+			//カーソルが重なった時
+			$(this).children('.wrp_detail').addClass('show');
+		}, function() {
+			//カーソルが離れた時
+			$(this).children('.wrp_detail').removeClass('show');
+		}
+	);
+
+	// header-drop
+	$('.wrp-nav_item').hover(
+		function() {
+			//カーソルが重なった時
+			$(this).children('.drop-menu').addClass('show');
+		}, function() {
+			//カーソルが離れた時
+			$(this).children('.drop-menu').removeClass('show');
+		}
+	);
+
+	$(function(){
+    
+    var arySpinnerCtrl = [];
+    var spin_speed = 20; //変動スピード
+    
+    //長押し押下時
+    $('.btnspinner').on('touchstart mousedown click', function(e){
+        if(arySpinnerCtrl['interval']) return false;
+        var target = $(this).data('target');
+        arySpinnerCtrl['target'] = target;
+        arySpinnerCtrl['timestamp'] = e.timeStamp;
+        arySpinnerCtrl['cal'] = Number($(this).data('cal'));
+        //クリックは単一の処理に留める
+        if(e.type == 'click'){
+            spinnerCal();
+            arySpinnerCtrl = [];
+            return false;
+        }
+        //長押し時の処理
+        setTimeout(function(){
+            //インターバル未実行中 + 長押しのイベントタイプスタンプ一致時に計算処理
+            if(!arySpinnerCtrl['interval'] && arySpinnerCtrl['timestamp'] == e.timeStamp){
+                arySpinnerCtrl['interval'] = setInterval(spinnerCal, spin_speed);
+            }
+        }, 500);
+    });
+    
+    //長押し解除時 画面スクロールも解除に含む
+    $(document).on('touchend mouseup scroll', function(e){
+        if(arySpinnerCtrl['interval']){
+            clearInterval(arySpinnerCtrl['interval']);
+            arySpinnerCtrl = [];
+        }
+    });
+    
+    //変動計算関数
+    function spinnerCal(){
+        var target = $(arySpinnerCtrl['target']);
+        var num = Number(target.val());
+        num = num + arySpinnerCtrl['cal'];
+        if(num > Number(target.data('max'))){
+            target.val(Number(target.data('max')));
+        }else if(Number(target.data('min')) > num){
+            target.val(Number(target.data('min')));
+        }else{
+            target.val(num);
+        }
+    }
+    
+	});
+	
+	//スムーズスクロール
+	$('a.move-link').click(function(){
+		var speed = 800;
+		var href= $(this).attr("href");
+		var target = $(href == "#" || href == "" ? 'html' : href);
+		var position = target.offset().top;
+		$("html, body").animate({scrollTop:position}, speed, "swing");
+		return false;
+	});	
+	
+	//スクロール用処理
+	var imgPos = $('.scr_tg').offset().top;
+	
+	var bh = $(window).height();
+
+    //cartに入れる特殊処理
+	var prdPos = 0;
+    if($('#wrp-prd_set').length){
+        prdPos = $('.single_add_to_cart_button').offset().top;
+    }
+	
+	$(window).scroll(function() {
+		if ($(this).scrollTop() > imgPos) {
+			$('.totop').addClass('open');
+		}else{
+			$('.totop').removeClass('open');
+		}
+        
+        if($('#wrp-prd_set').length){
+            if ($(this).scrollTop() > prdPos) {
+                $('#wrp-prd_set').addClass('prd_fix');
+            }else{
+                $('#wrp-prd_set').removeClass('prd_fix');
+            }
+        }
+	});
+    
+
+	//テキスト用アコーディオン
+	$(document).on('click','.js-aco',function(){
+		var tg = $(this).closest('.wrp-aco');
+		tg.toggleClass('open');
+	});
+	 
+	//アーカイブページ切り替え
+	$('a.item-a_ico').click(function(){
+		$('#arclist').removeClass();
+		$('a.item-a_ico').removeClass('active');
+		$(this).addClass('active');
+		var my_class= $(this).attr("data-type");
+		$('#arclist').addClass(my_class);
+	});
+	
+
+	var x = 767;
+	w = $(window).width();
+	if(w <= x){
+		$("a.dropdown-toggle").each(function() {
+			$(this).attr('data-toggle','none');
+		});	
+	}
+    
+    $('.del-offcanvas').on('click', function () {
+    $('#sm-offcanvas').removeClass('in');
+    $('body').removeClass('offcanvas-stop-scrolling');
+    $('.m-toggle').removeClass('is-open');
+	})
+			
+	var w = $(window).width();
+    
+     $('.one-slider').slick({
+		infinite: true,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: false,
+		fade: true,
+		pauseOnHover: false,
+		autoplay:true, //自動再生
+		autoplaySpeed:5000,
+		speed: 1000,
+     });
+
+    $('.prd-slider').slick({
+		infinite: true,
+		slidesToShow: 3,
+		slidesToScroll: 1,
+		arrows: true,
+        dots: false,
+		prevArrow: '<div class="slider-arrow slider-prev no-fa fa fa-chevron-left"></div>',
+		nextArrow: '<div class="slider-arrow slider-next no-fa fa fa-chevron-right"></div>',
+		pauseOnHover: false,
+		autoplay:false, //自動再生
+		autoplaySpeed:1500,
+		speed: 1000,
+        responsive: [
+        {
+          breakpoint: 1000,
+            settings: {
+               slidesToShow: 2,
+             }
+         },{
+        breakpoint: 767,
+           settings: {
+               slidesToShow: 1,
+                centerMode: true,
+                centerPadding: '12%',
+           }
+        }
+        ]        
+     });        
+	
+     $('.my-slider').slick({
+		infinite: true,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: true,
+		autoplay:false, //自動再生
+		autoplaySpeed:5000,
+		speed: 1000,
+		prevArrow: '<div class="slider-arrow slider-prev no-fa fa fa-angle-left"></div>',
+		nextArrow: '<div class="slider-arrow slider-next no-fa fa fa-angle-right"></div>',
+		asNavFor: '.my-slider-nav',
+		responsive: [{
+		   breakpoint: 768,
+				settings: {
+					 arrows: false,
+		   }
+		}]		  
+     });
+     $('.my-slider-nav').slick({
+          infinite: true,
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          asNavFor: '.my-slider', //スライダー本体のクラス名
+          arrows: false,
+		  centerMode: true,
+		  centerPadding: '10px',
+          focusOnSelect: true,
+          responsive: [{
+               breakpoint: 600,
+                    settings: {
+						slidesToShow: 2,
+						centerPadding: '10%',
+               }
+          }]		  
+     });
+})
+
 /* Click color change image product */
 jQuery(document).ready(function($) {
   jQuery('.engoj_select_color a').each(function(){
