@@ -1,5 +1,109 @@
 {% if section.settings.select_hds == "header_v1" %}
 {% if template contains 'index' %}
+  <header>
+        <div class="head_inner">
+            <div class="flex fx-bet">
+                <div class="head_left">
+                    <div class="flex fx-bet fx-itc">
+                        <div class="head_logo">
+                            <h1>
+                              <a href="../index.html">
+                                <div class="flex fx-itc">
+                                  <img src="../assets/images/logo_icon.png">
+                                  <span>イベント情報</span>
+                                </div>
+                              </a>
+                            </h1>
+                        </div>
+                        <div class="head_item">
+                            <a href="#">プロダクト一覧<i class="fas fa-chevron-down"></i></a>
+                            <a href="#"><i class="fas fa-search"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="head_right">
+                    <a href="#">
+                        <div class="wrp_text">
+                            <span class="main">MY PAGE</span>
+                            <span class="sub">お客様情報<br class="pad_block">登録・確認</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="head-item sm-nav-box pc-hidden">
+                    <nav class="off-base navbar-offcanvas-right anime navbar-offcanvas offcanvas-collapse" role="navigation" id="sm-offcanvas">
+                        <div class="in_logo">
+                          <div class="head_logo">
+                              <h1>
+                                <a href="../index.html">
+                                  <div class="flex fx-coc fx-itc">
+                                    <img src="../assets/images/logo_icon.png">
+                                    <span>イベント情報</span>
+                                  </div>
+                                </a>
+                              </h1>
+                          </div>
+                        </div>
+                        <ul>
+                            <li><a href="#1">HOME</a></li>
+                            <li><a href="#2">イベント一覧<i class="fas fa-chevron-down"></i></a></li>
+                            <li><a href="#3">開催レポート</a></li>
+                            <li><a href="#4">初めての方<i class="fas fa-chevron-down"></i></a></li>
+                            <li><a href="#5">使い方</a></li>
+                        </ul>
+                        <div class="hum_search">
+                            <form>
+                                <input type="search" placeholder="Search...">
+                                <button><i class="fas fa-search"></i></button>
+                            </form>
+                        </div>
+                        <div class="nav-foot_mypage">
+                            <a href="#">
+                                <span class="main">MY PAGE</span>
+                                <span class="sub">お客様情報登録・確認</span>
+                            </a>
+                        </div>
+                    </nav>
+
+                    <button type="button" class="m-toggle pc-hidden offcanvas-toggle anime" data-toggle="offcanvas" data-target="#sm-offcanvas">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="head_menu">MENU</span>
+                        <span class="head_close">CLOSE</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="head_bottom">
+            <div class="flex fx-coc fx-itc">
+                <a href="../index.html" class="nav_item">HOME</a>
+                <div class="wrp-nav_item">
+                  <a href="../seminar.html" class="nav_item">イベント一覧<i class="fas fa-chevron-down"></i></a>
+                  <div class="drop-menu">
+                    <ul>
+                      <li><a href="#" class="active">全てのイベント</a></li>
+                      <li><a href="#">読書会</a></li>
+                      <li><a href="#">エキスパートカフェ</a></li>
+                      <li><a href="#">実学M.B.A</a></li>
+                      <li><a href="#">LIFE LIFT</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <a href="../triathlon.html" class="nav_item">開催レポート</a>
+                <div class="wrp-nav_item">
+                  <a href="../other.html" class="nav_item">初めての方<i class="fas fa-chevron-down"></i></a>
+                  <div class="drop-menu">
+                    <ul>
+                      <li><a href="#" class="active">初めての方</a></li>
+                      <li><a href="#">ファシリテーターについて</a></li>
+                    </ul>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </header>
+  
 <header id="header" class="homepage header-v1-h1 js_height_hd jsheader_sticky d-none d-xl-block {% if section.settings.hd_home_enable_transparents %}header-absolute {% endif %}">
   {% comment %}
   <div id="bwp-topbar" class="topbar-v2 hidden-sm hidden-xs">
