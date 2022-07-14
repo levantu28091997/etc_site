@@ -1,5 +1,121 @@
 {
   "sections": {
+    "1656042148c76871a1": {
+      "type": "section-slideshow-v1",
+      "blocks": {
+        "16560421482eebd1c0-0": {
+          "type": "slideshow",
+          "settings": {
+            "select_position_content": "left",
+            "select_textalign_content": "left",
+            "block_title_top1": "WELLCOME KIDDEN",
+            "color_block_title_top1": "#000000",
+            "font_size_top1": 18,
+            "fonts_sub_1": "",
+            "effect_title1": "fadeInDown",
+            "block_title_top": "Kids Toy & Gift",
+            "color_block_title_top": "#000000",
+            "font_size_title_top": 80,
+            "fonts_title_top": "",
+            "effect_title": "flipInX",
+            "block_title_top2": "Limit Offer 10% Off Week",
+            "color_block_title_top2": "#000000",
+            "font_size_top2": 20,
+            "fonts_sub_2": "",
+            "effect_title2": "slideInLeft",
+            "block_buton": "Shop now",
+            "font_size_button": 14,
+            "fonts_button": "",
+            "bg_color_block_button": "#000000",
+            "color_block_button": "#ffffff",
+            "bg_color_hover_button": "#ed71a3",
+            "color_hover_text": "#ffffff",
+            "block_url": "shopify:\/\/collections\/all",
+            "effect_button": "zoomIn",
+            "ena_slide_video": false,
+            "url_ytb_video": "",
+            "block_banerimage": "shopify:\/\/shop_images\/slideshowV1-bg1.jpg"
+          }
+        },
+        "16560421482eebd1c0-1": {
+          "type": "slideshow",
+          "settings": {
+            "select_position_content": "center",
+            "select_textalign_content": "center",
+            "block_title_top1": "WELLCOME KIDDEN",
+            "color_block_title_top1": "#000000",
+            "font_size_top1": 18,
+            "fonts_sub_1": "",
+            "effect_title1": "fadeInUp",
+            "block_title_top": "Baby Kids Clothes",
+            "color_block_title_top": "#000000",
+            "font_size_title_top": 80,
+            "fonts_title_top": "",
+            "effect_title": "fadeInUp",
+            "block_title_top2": "Sale up to 40% Off Day",
+            "color_block_title_top2": "#000000",
+            "font_size_top2": 20,
+            "fonts_sub_2": "",
+            "effect_title2": "fadeInUp",
+            "block_buton": "Shop now",
+            "font_size_button": 14,
+            "fonts_button": "",
+            "bg_color_block_button": "#000000",
+            "color_block_button": "#ffffff",
+            "bg_color_hover_button": "#ed71a3",
+            "color_hover_text": "#ffffff",
+            "block_url": "shopify:\/\/collections\/all",
+            "effect_button": "fadeInUp",
+            "ena_slide_video": false,
+            "url_ytb_video": "",
+            "block_banerimage": "shopify:\/\/shop_images\/slideshowV1-bg2.jpg"
+          }
+        },
+        "16560421482eebd1c0-2": {
+          "type": "slideshow",
+          "settings": {
+            "select_position_content": "right",
+            "select_textalign_content": "center",
+            "block_title_top1": "WELLCOME KIDDEN",
+            "color_block_title_top1": "#000000",
+            "font_size_top1": 18,
+            "fonts_sub_1": "",
+            "effect_title1": "slideInLeft",
+            "block_title_top": "Learn & Play Kids",
+            "color_block_title_top": "#000000",
+            "font_size_title_top": 80,
+            "fonts_title_top": "",
+            "effect_title": "slideInRight",
+            "block_title_top2": "10% Off Your First Order",
+            "color_block_title_top2": "#000000",
+            "font_size_top2": 20,
+            "fonts_sub_2": "",
+            "effect_title2": "flipInX",
+            "block_buton": "Shop now",
+            "font_size_button": 14,
+            "fonts_button": "",
+            "bg_color_block_button": "#000000",
+            "color_block_button": "#ffffff",
+            "bg_color_hover_button": "#ed71a3",
+            "color_hover_text": "#ffffff",
+            "block_url": "shopify:\/\/collections\/all",
+            "effect_button": "zoomIn",
+            "ena_slide_video": false,
+            "url_ytb_video": "",
+            "block_banerimage": "shopify:\/\/shop_images\/slideshowV1-bg3.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "16560421482eebd1c0-0",
+        "16560421482eebd1c0-1",
+        "16560421482eebd1c0-2"
+      ],
+      "settings": {
+        "margin_top": "",
+        "margin_bottom": ""
+      }
+    },
     "1656122921b0e76ee3": {
       "type": "section-collection-v1",
       "blocks": {
@@ -142,6 +258,7 @@
     }
   },
   "order": [
+    "1656042148c76871a1",
     "1656122921b0e76ee3",
     "165577890922a2f3a7",
     "16561262838ddcc918",
