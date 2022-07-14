@@ -1,37 +1,5 @@
 <!-- /sections/footer.liquid -->
-{% if template contains 'index' %}
-  {% if section.settings.select_fts == "footer_v1" %}
-  {% include 'footer-v1' %}
-  {% elsif section.settings.select_fts == "footer_v2" %}
-  {% include 'footer-v2' %}
-  {% elsif section.settings.select_fts == "footer_v3" %}
-  {% include 'footer-v3' %}
-  {% elsif section.settings.select_fts == "footer_v4" %}
-  {% include 'footer-v4' %}
-  {% elsif section.settings.select_fts == "footer_v5" %}
-  {% include 'footer-v5' %}
-  {% elsif section.settings.select_fts == "footer_v6" %}
-  {% include 'footer-v6' %}
-  {% elsif section.settings.select_fts == "footer_none" %}
-  {% endif %}
-
-  
-{% else %}
-  {% if section.settings.select_fts_all == "footer_ver1" %}
-  {% include 'footer-v1' %}
-  {% elsif section.settings.select_fts_all == "footer_ver2" %}
-  {% include 'footer-v2' %}
-  {% elsif section.settings.select_fts_all == "footer_ver3" %}
-  {% include 'footer-v3' %}
-  {% elsif section.settings.select_fts_all == "footer_ver4" %}
-  {% include 'footer-v4' %}
-  {% elsif section.settings.select_fts_all == "footer_ver5" %}
-  {% include 'footer-v5' %}
-  {% elsif section.settings.select_fts_all == "footer_ver6" %}
-  {% include 'footer-v6' %}
-  {% endif %}
-
-{% endif %}
+{% include 'footer-v1' %}
 
 {% schema %}
 {
