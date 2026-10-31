@@ -100,7 +100,7 @@
       <div class="row align-items-center">
         <div class="col-md-4 {% if settings.enable_rtl_mode %} text-md-right {% else %}text-md-left {% endif %} text-center">
           <div class="logo-footer">
-            {% if settings.logo_svg4 !=blank %}
+            {% if true %}{{ 'Liquid error (snippets/footer-v4 line 103): Unknown operator !=blank' }}{% elsif false %}
             <div class="logosvg m-auto m-md-0" style="max-width:{{settings.fv4_main_logo_maxwidth}}px;">
               <a class="d-block" href="{{shop.url}}">{{settings.logo_svg4}}</a>
             </div>          
@@ -276,7 +276,7 @@
       <div class="row align-items-center">
         <div class="col-md-4 {% if settings.enable_rtl_mode %} text-md-right {% else %}text-md-left {% endif %} text-center">
           <div class="logo-footer">
-            {% if settings.logo_svg4 !=blank %}
+            {% if true %}{{ 'Liquid error (snippets/footer-v4 line 279): Unknown operator !=blank' }}{% elsif false %}
             <div class="logosvg m-md-0 m-auto" style="max-width:{{settings.fv4_main_logo_maxwidth}}px;">
               <a class="d-block" href="{{shop.url}}">{{settings.logo_svg4}}</a>
             </div>          
@@ -330,4 +330,18 @@
   }
 </style>
 {% endunless %}
-{% endif %}
+{% endif %}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% if settings.logo_svg4 !=blank %}"
+  to: "{% if true %}{{ 'Liquid error (snippets/footer-v4 line 103): Unknown operator
+    !=blank' }}{% elsif false %}"
+  position: 4499..4605
+- from: "{% if settings.logo_svg4 !=blank %}"
+  to: "{% if true %}{{ 'Liquid error (snippets/footer-v4 line 279): Unknown operator
+    !=blank' }}{% elsif false %}"
+  position: 12760..12866
+{%- endcomment -%}

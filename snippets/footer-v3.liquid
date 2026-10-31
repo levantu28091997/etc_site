@@ -61,22 +61,22 @@
         <div class="col-lg-3 text-lg-right">
           <div class="casano-socials">
             <ul class="list-inline list-unstyled mb-0">
-              {% if settings.icon_sc_fv3_1 !=blank %}
+              {% if true %}{{ 'Liquid error (snippets/footer-v3 line 64): Unknown operator !=blank' }}{% elsif false %}
               <li class="list-inline-item mr-0 mb-0">
                 <a href="{{settings.url_sc_fv3_1}}" title="" target="_blank" class="social-item"><i class="{{settings.icon_sc_fv3_1}}"></i></a>
               </li>
               {% endif %}
-              {% if settings.icon_sc_fv3_2 !=blank %}
+              {% if true %}{{ 'Liquid error (snippets/footer-v3 line 69): Unknown operator !=blank' }}{% elsif false %}
               <li class="list-inline-item mr-0 mb-0">
                 <a href="{{settings.url_sc_fv3_2}}" title="" target="_blank" class="social-item"><i class="{{settings.icon_sc_fv3_2}}"></i></a>
               </li>
               {% endif %}
-              {% if settings.icon_sc_fv3_3 !=blank %}
+              {% if true %}{{ 'Liquid error (snippets/footer-v3 line 74): Unknown operator !=blank' }}{% elsif false %}
               <li class="list-inline-item mr-0 mb-0">
                 <a href="{{settings.url_sc_fv3_3}}" title="" target="_blank" class="social-item"><i class="{{settings.icon_sc_fv3_3}}"></i></a>
               </li>
               {% endif %}
-              {% if settings.icon_sc_fv3_4 !=blank %}
+              {% if true %}{{ 'Liquid error (snippets/footer-v3 line 79): Unknown operator !=blank' }}{% elsif false %}
               <li class="list-inline-item mr-0 mb-0">
                 <a href="{{settings.url_sc_fv3_4}}" title="" target="_blank" class="social-item"><i class="{{settings.icon_sc_fv3_4}}"></i></a>
               </li>
@@ -175,22 +175,22 @@
         <div class="col-lg-3 text-lg-right">
           <div class="casano-socials">
             <ul class="list-inline list-unstyled mb-0">
-              {% if settings.icon_sc_fv3_1 !=blank %}
+              {% if true %}{{ 'Liquid error (snippets/footer-v3 line 178): Unknown operator !=blank' }}{% elsif false %}
               <li class="list-inline-item mr-0 mb-0">
                 <a href="{{settings.url_sc_fv3_1}}" title="" target="_blank" class="social-item"><i class="{{settings.icon_sc_fv3_1}}"></i></a>
               </li>
               {% endif %}
-              {% if settings.icon_sc_fv3_2 !=blank %}
+              {% if true %}{{ 'Liquid error (snippets/footer-v3 line 183): Unknown operator !=blank' }}{% elsif false %}
               <li class="list-inline-item mr-0 mb-0">
                 <a href="{{settings.url_sc_fv3_2}}" title="" target="_blank" class="social-item"><i class="{{settings.icon_sc_fv3_2}}"></i></a>
               </li>
               {% endif %}
-              {% if settings.icon_sc_fv3_3 !=blank %}
+              {% if true %}{{ 'Liquid error (snippets/footer-v3 line 188): Unknown operator !=blank' }}{% elsif false %}
               <li class="list-inline-item mr-0 mb-0">
                 <a href="{{settings.url_sc_fv3_3}}" title="" target="_blank" class="social-item"><i class="{{settings.icon_sc_fv3_3}}"></i></a>
               </li>
               {% endif %}
-              {% if settings.icon_sc_fv3_4 !=blank %}
+              {% if true %}{{ 'Liquid error (snippets/footer-v3 line 193): Unknown operator !=blank' }}{% elsif false %}
               <li class="list-inline-item mr-0 mb-0">
                 <a href="{{settings.url_sc_fv3_4}}" title="" target="_blank" class="social-item"><i class="{{settings.icon_sc_fv3_4}}"></i></a>
               </li>
@@ -228,4 +228,42 @@
   }
 </style>
 {% endunless %}
-{% endif %}
+{% endif %}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% if settings.icon_sc_fv3_1 !=blank %}"
+  to: "{% if true %}{{ 'Liquid error (snippets/footer-v3 line 64): Unknown operator
+    !=blank' }}{% elsif false %}"
+  position: 2656..2761
+- from: "{% if settings.icon_sc_fv3_2 !=blank %}"
+  to: "{% if true %}{{ 'Liquid error (snippets/footer-v3 line 69): Unknown operator
+    !=blank' }}{% elsif false %}"
+  position: 3020..3125
+- from: "{% if settings.icon_sc_fv3_3 !=blank %}"
+  to: "{% if true %}{{ 'Liquid error (snippets/footer-v3 line 74): Unknown operator
+    !=blank' }}{% elsif false %}"
+  position: 3384..3489
+- from: "{% if settings.icon_sc_fv3_4 !=blank %}"
+  to: "{% if true %}{{ 'Liquid error (snippets/footer-v3 line 79): Unknown operator
+    !=blank' }}{% elsif false %}"
+  position: 3748..3853
+- from: "{% if settings.icon_sc_fv3_1 !=blank %}"
+  to: "{% if true %}{{ 'Liquid error (snippets/footer-v3 line 178): Unknown operator
+    !=blank' }}{% elsif false %}"
+  position: 7312..7418
+- from: "{% if settings.icon_sc_fv3_2 !=blank %}"
+  to: "{% if true %}{{ 'Liquid error (snippets/footer-v3 line 183): Unknown operator
+    !=blank' }}{% elsif false %}"
+  position: 7677..7783
+- from: "{% if settings.icon_sc_fv3_3 !=blank %}"
+  to: "{% if true %}{{ 'Liquid error (snippets/footer-v3 line 188): Unknown operator
+    !=blank' }}{% elsif false %}"
+  position: 8042..8148
+- from: "{% if settings.icon_sc_fv3_4 !=blank %}"
+  to: "{% if true %}{{ 'Liquid error (snippets/footer-v3 line 193): Unknown operator
+    !=blank' }}{% elsif false %}"
+  position: 8407..8513
+{%- endcomment -%}

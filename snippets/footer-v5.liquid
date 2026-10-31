@@ -30,22 +30,22 @@
         </div>
         <div class="list-icon ">
           <ul class="list-inline list-unstyled mb-0">
-            {% if settings.icon_sc_fv5_1 !=blank %}
+            {% if true %}{{ 'Liquid error (snippets/footer-v5 line 33): Unknown operator !=blank' }}{% elsif false %}
             <li class="list-inline-item mr-0">
               <a href="{{settings.url_sc_fv5_1}}" title="" target="_blank" class="social-item"><i class="{{settings.icon_sc_fv5_1}}"></i></a>
             </li>
             {% endif %}
-            {% if settings.icon_sc_fv5_2 !=blank %}
+            {% if true %}{{ 'Liquid error (snippets/footer-v5 line 38): Unknown operator !=blank' }}{% elsif false %}
             <li class="list-inline-item mr-0">
               <a href="{{settings.url_sc_fv5_2}}" title="" target="_blank" class="social-item"><i class="{{settings.icon_sc_fv5_2}}"></i></a>
             </li>
             {% endif %}
-            {% if settings.icon_sc_fv5_3 !=blank %}
+            {% if true %}{{ 'Liquid error (snippets/footer-v5 line 43): Unknown operator !=blank' }}{% elsif false %}
             <li class="list-inline-item mr-0">
               <a href="{{settings.url_sc_fv5_3}}" title="" target="_blank" class="social-item"><i class="{{settings.icon_sc_fv5_3}}"></i></a>
             </li>
             {% endif %}
-            {% if settings.icon_sc_fv5_4 !=blank %}
+            {% if true %}{{ 'Liquid error (snippets/footer-v5 line 48): Unknown operator !=blank' }}{% elsif false %}
             <li class="list-inline-item mr-0">
               <a href="{{settings.url_sc_fv5_4}}" title="" target="_blank" class="social-item"><i class="{{settings.icon_sc_fv5_4}}"></i></a>
             </li>
@@ -56,7 +56,7 @@
       </div>
       <div class="col-lg-4 d-none d-lg-flex align-items-center justify-content-center text-center" style="z-index:1;">
         <div class="logo-footer">
-          {% if settings.logo_svg5 !=blank %}
+          {% if true %}{{ 'Liquid error (snippets/footer-v5 line 59): Unknown operator !=blank' }}{% elsif false %}
           <div class="logosvg" style="max-width:{{settings.fv5_main_logo_maxwidth}}px;">
             <a class="d-block" href="{{shop.url}}">{{settings.logo_svg5}}</a>
           </div>          
@@ -172,22 +172,22 @@
         </div>
         <div class="list-icon ">
           <ul class="list-inline list-unstyled mb-0">
-            {% if settings.icon_sc_fv5_1 !=blank %}
+            {% if true %}{{ 'Liquid error (snippets/footer-v5 line 175): Unknown operator !=blank' }}{% elsif false %}
             <li class="list-inline-item mr-0">
               <a href="{{settings.url_sc_fv5_1}}" title="" target="_blank" class="social-item"><i class="{{settings.icon_sc_fv5_1}}"></i></a>
             </li>
             {% endif %}
-            {% if settings.icon_sc_fv5_2 !=blank %}
+            {% if true %}{{ 'Liquid error (snippets/footer-v5 line 180): Unknown operator !=blank' }}{% elsif false %}
             <li class="list-inline-item mr-0">
               <a href="{{settings.url_sc_fv5_2}}" title="" target="_blank" class="social-item"><i class="{{settings.icon_sc_fv5_2}}"></i></a>
             </li>
             {% endif %}
-            {% if settings.icon_sc_fv5_3 !=blank %}
+            {% if true %}{{ 'Liquid error (snippets/footer-v5 line 185): Unknown operator !=blank' }}{% elsif false %}
             <li class="list-inline-item mr-0">
               <a href="{{settings.url_sc_fv5_3}}" title="" target="_blank" class="social-item"><i class="{{settings.icon_sc_fv5_3}}"></i></a>
             </li>
             {% endif %}
-            {% if settings.icon_sc_fv5_4 !=blank %}
+            {% if true %}{{ 'Liquid error (snippets/footer-v5 line 190): Unknown operator !=blank' }}{% elsif false %}
             <li class="list-inline-item mr-0">
               <a href="{{settings.url_sc_fv5_4}}" title="" target="_blank" class="social-item"><i class="{{settings.icon_sc_fv5_4}}"></i></a>
             </li>
@@ -198,7 +198,7 @@
       </div>
       <div class="col-lg-4 d-none d-lg-flex align-items-center justify-content-center text-center" style="z-index:1;">
         <div class="logo-footer">
-          {% if settings.logo_svg5 !=blank %}
+          {% if true %}{{ 'Liquid error (snippets/footer-v5 line 201): Unknown operator !=blank' }}{% elsif false %}
           <div class="logosvg" style="max-width:{{settings.fv5_main_logo_maxwidth}}px;">
             <a class="d-block" href="{{shop.url}}">{{settings.logo_svg5}}</a>
           </div>          
@@ -280,4 +280,50 @@
   }
 </style>
 {% endunless %}
-{% endif %}
+{% endif %}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% if settings.icon_sc_fv5_1 !=blank %}"
+  to: "{% if true %}{{ 'Liquid error (snippets/footer-v5 line 33): Unknown operator
+    !=blank' }}{% elsif false %}"
+  position: 1261..1366
+- from: "{% if settings.icon_sc_fv5_2 !=blank %}"
+  to: "{% if true %}{{ 'Liquid error (snippets/footer-v5 line 38): Unknown operator
+    !=blank' }}{% elsif false %}"
+  position: 1610..1715
+- from: "{% if settings.icon_sc_fv5_3 !=blank %}"
+  to: "{% if true %}{{ 'Liquid error (snippets/footer-v5 line 43): Unknown operator
+    !=blank' }}{% elsif false %}"
+  position: 1959..2064
+- from: "{% if settings.icon_sc_fv5_4 !=blank %}"
+  to: "{% if true %}{{ 'Liquid error (snippets/footer-v5 line 48): Unknown operator
+    !=blank' }}{% elsif false %}"
+  position: 2308..2413
+- from: "{% if settings.logo_svg5 !=blank %}"
+  to: "{% if true %}{{ 'Liquid error (snippets/footer-v5 line 59): Unknown operator
+    !=blank' }}{% elsif false %}"
+  position: 2862..2967
+- from: "{% if settings.icon_sc_fv5_1 !=blank %}"
+  to: "{% if true %}{{ 'Liquid error (snippets/footer-v5 line 175): Unknown operator
+    !=blank' }}{% elsif false %}"
+  position: 7909..8015
+- from: "{% if settings.icon_sc_fv5_2 !=blank %}"
+  to: "{% if true %}{{ 'Liquid error (snippets/footer-v5 line 180): Unknown operator
+    !=blank' }}{% elsif false %}"
+  position: 8259..8365
+- from: "{% if settings.icon_sc_fv5_3 !=blank %}"
+  to: "{% if true %}{{ 'Liquid error (snippets/footer-v5 line 185): Unknown operator
+    !=blank' }}{% elsif false %}"
+  position: 8609..8715
+- from: "{% if settings.icon_sc_fv5_4 !=blank %}"
+  to: "{% if true %}{{ 'Liquid error (snippets/footer-v5 line 190): Unknown operator
+    !=blank' }}{% elsif false %}"
+  position: 8959..9065
+- from: "{% if settings.logo_svg5 !=blank %}"
+  to: "{% if true %}{{ 'Liquid error (snippets/footer-v5 line 201): Unknown operator
+    !=blank' }}{% elsif false %}"
+  position: 9514..9620
+{%- endcomment -%}
